@@ -14,11 +14,10 @@ public class Car implements Comparable<Car> {
 	private final String title;
 	private final int milage; 
 	private final int yearOfProduction;
-
 	  private int addDay;
 	  private int addMonth;
 	  private int addYear;
-	public GregorianCalendar dataDodania = new GregorianCalendar(); 
+	private GregorianCalendar dataDodania = new GregorianCalendar(); 
 
 //// KONSTRUKTOR KLASY CAR	
 	public Car(String marka, String model, String vin, String color, String nrRej, int dzienOgloszenia, int miesiacOgloszenia, int rokOgloszenia, int rokProdukcji, int cena, int przebieg, String tytu³) {
@@ -85,11 +84,9 @@ public class Car implements Comparable<Car> {
 	public int compareTo(Car compareCar) {
 		
 		int comparePrice = ((Car) compareCar).getPrice(); 
-		
-		//ascending order
-		return this.price - comparePrice;
-		
-		//descending order
-		//return comparePrice - this.price;
+			//ascending order
+			return this.price - comparePrice;
+			//descending order
+			//return comparePrice - this.price;
 	}
 }

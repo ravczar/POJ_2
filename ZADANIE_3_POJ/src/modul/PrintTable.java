@@ -21,7 +21,7 @@ import java.util.List;
 			autko.getVin() + "\t|" + 
 			autko.getColor() + "\t\t|" +
 			autko.getNrRej() +"\t|" + 
-			autko.dataDodania.get(Calendar.DAY_OF_MONTH) + "." + autko.dataDodania.get(Calendar.MONTH) + "." + autko.dataDodania.get(Calendar.YEAR) + "\t\t|" + 
+			autko.getDataDodania().get(Calendar.DAY_OF_MONTH) + "." + autko.getDataDodania().get(Calendar.MONTH) + "." + autko.getDataDodania().get(Calendar.YEAR) + "\t\t|" + 
 			autko.getYearOfProduction() + "\t\t|"+
 			autko.getPrice() + "\t\t|" +
 			autko.getMileage() + "\t\t|" +

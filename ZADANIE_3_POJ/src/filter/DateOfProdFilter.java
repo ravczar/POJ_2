@@ -1,15 +1,20 @@
 package filter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import modul.Car;
 import modul.CarGenerator;
-import modul.PrintTable;
 
 public class DateOfProdFilter {
+	private static List<Car> list = new ArrayList<Car>();
+
+	public static List<Car> getAllFilteredCars() {
+		return list;
+	}
+	
 	public static void PrivideBottomAndTopYear(CarGenerator podaj, int bottomYear, double topYear) {
 		int i=0;
-		ArrayList<Car> list = new ArrayList<Car>();
 		for (Car car : podaj.getAllGeneratedCars()) {
 			
 			if (car.getYearOfProduction() >= bottomYear && car.getYearOfProduction() <= topYear ) {
@@ -17,7 +22,6 @@ public class DateOfProdFilter {
 				i++;
 			}
 		}
-		PrintTable.PrintOutTableWithCars(list);
 		System.out.println("Siema, takich fur po 2000 roku jest: " + i + " ,a wszystkich aut jest: " + podaj.getAllGeneratedCars().size());
 	}
 }

@@ -1,22 +1,27 @@
 package filter;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import modul.Car;
 import modul.CarGenerator;
-import modul.PrintTable;
 
 public class MIleageFilter {
-	public static void PrivideLowesAndHighestMileage(CarGenerator podaj, int lowestMIleage, int highestMileage ) {
+	
+	private static List<Car> list = new ArrayList<Car>();
+
+	public static List<Car> getAllFilteredCars() {
+		return list;
+	}
+	
+	public static void PrivideLowestAndHighestMileage(CarGenerator podaj, int lowestMIleage, int highestMileage ) {
 		int i=0;
-		ArrayList<Car> mewa = new ArrayList<Car>();
 		for (Car car : podaj.getAllGeneratedCars()) {
 			if (car.getMileage() >= lowestMIleage && car.getMileage() <= highestMileage ) {
-				mewa.add(car);
+				list.add(car);
 				i++;
 			}
 		}
-		PrintTable.PrintOutTableWithCars(mewa);
-		System.out.println("Fur z przebiegiem wiekszym od: " + lowestMIleage +" i mniejszym od: "+ highestMileage +" Jest: "+ i + ". Wszystkich aut jest: " + podaj.getAllGeneratedCars().size());
-		
+		System.out.println("Fur z przebiegiem wiekszym od: " + lowestMIleage +" i mniejszym od: "+ highestMileage +" Jest: "+ i + ". Wszystkich aut jest: " + list.size() + ". Patrz auta poni¿ej.");
 	}
 }
